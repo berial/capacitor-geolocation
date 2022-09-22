@@ -24,6 +24,7 @@ npx cap sync
 import 'capacitor-geolocation';
 import { Plugins } from '@capacitor/core';
 const { BerialGeolocation } = Plugins;
+```
 
 ### Add listner(s) for location updates
 
