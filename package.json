@@ -1,7 +1,7 @@
 {
   "name": "capacitor-geolocation",
-  "version": "1.0.0",
-  "description": "定位",
+  "version": "1.0.2",
+  "description": "LocationManager GPS定位",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

@@ -4,7 +4,6 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -17,7 +16,6 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.PluginRequestCodes;
-import com.getcapacitor.ui.Toast;
 
 import java.util.HashMap;
 import java.util.List;
@@ -135,22 +133,10 @@ public class BerialGeolocation extends Plugin {
 
         lm = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
 
-        Criteria criteria = new Criteria();
-        criteria.setAccuracy(Criteria.ACCURACY_FINE);
-        criteria.setAltitudeRequired(false);
-        criteria.setBearingRequired(false);
-        criteria.setCostAllowed(false);
-        criteria.setPowerRequirement(Criteria.POWER_HIGH);
-
         List<String> providers = lm.getAllProviders();
         System.out.println(providers);
 
-        String provider;
-        if (providers.contains("fused")) {
-            provider = "fused";
-        } else {
-            provider = LocationManager.GPS_PROVIDER;
-        }
+        String provider = LocationManager.GPS_PROVIDER;
 
         listener = new LocationListener() {
             @Override
